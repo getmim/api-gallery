@@ -48,7 +48,7 @@ return [
                 'method' => 'GET',
                 'handler' => 'ApiGallery\\Controller\\Gallery::index'
             ],
-            'apiGallerSingle' => [
+            'apiGallerySingle' => [
                 'path' => [
                     'value' => '/gallery/view/(:identity)',
                     'params' => [
