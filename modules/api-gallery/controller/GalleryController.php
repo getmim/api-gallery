@@ -20,7 +20,7 @@ class GalleryController extends \Api\Controller
 
         list($page, $rpp) = $this->req->getPager();
 
-        $cond = [];
+        $cond = $this->req->getCond(['q']);
 
         $galleries = Gallery::get($cond, $rpp, $page, ['id'=>false]) ?? [];
         if($galleries)
@@ -52,7 +52,7 @@ class GalleryController extends \Api\Controller
         if(!$gallery)
             return $this->show404();
 
-        $gallery = Formatter::format('gallery', $gallery);
+        $gallery = Formatter::format('gallery', $gallery, ['user']);
         unset($gallery->meta);
 
         $this->resp(0, $gallery);

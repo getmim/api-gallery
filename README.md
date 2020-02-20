@@ -10,6 +10,6 @@ mim app install api-gallery
 
 ## Endpoints
 
-### {APIHOST}/gallery
+### {APIHOST}/gallery{?q,rpp=12,page=1}
 
 ### {APIHOST}/gallery/view/{id|slug}
